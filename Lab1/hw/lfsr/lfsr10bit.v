@@ -7,14 +7,14 @@ output  [9:0]   LEDR;
 reg     [9:0]   lfsr;
 
 wire            clk = KEY[0];
-wire            rst = KEY[1];
+wire            rst_n = KEY[1];
 
 wire    lfsr_lsb = ~(lfsr[9] ^ lfsr[6]);
 
 assign LEDR = lfsr;
 
-always @(posedge clk, negedge rst) begin
-    if (~rst) begin
+always @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
         lfsr <= 0;
     end else begin
         lfsr <= {lfsr[8:0], lfsr_lsb};
