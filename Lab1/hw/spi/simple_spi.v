@@ -6,7 +6,7 @@ input   [1:0]   KEY;
 output  [9:0]   LEDR;
 
 wire    sys_clk     = MAX10_CLK1_50;
-wire    sys_rst     = KEY[1];
+wire    sys_rst_n     = KEY[1];
 
 wire    spi_sck     = GPIO[0];
 wire    spi_cs      = GPIO[1];
@@ -28,16 +28,16 @@ assign    sck_rs_edg    = ~sck_sync_ff[2] & sck_sync_ff[1];
 assign    tr_cmplt      = ~cs_sync_ff[2] & cs_sync_ff[1];
 
 // you should obligatorily implement reset on all control lines
-always @(posedge sys_clk, negedge sys_rst) begin
-    if (~sys_rst) begin
+always @(posedge sys_clk, negedge sys_rst_n) begin
+    if (~sys_rst_n) begin
         sck_sync_ff <= 3'b000;
     end else begin
         sck_sync_ff <= {sck_sync_ff[1:0], spi_sck};
     end
 end 
     
-always @(posedge sys_clk, negedge sys_rst) begin
-    if (~sys_rst) begin
+always @(posedge sys_clk, negedge sys_rst_n) begin
+    if (~sys_rst_n) begin
         cs_sync_ff <= 3'b111;
     end else begin
         cs_sync_ff <= {cs_sync_ff[1:0], spi_cs};
