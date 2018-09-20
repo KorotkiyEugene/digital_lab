@@ -12,9 +12,9 @@ int main()
     cs = 1;
     uint8_t val = 0;
 
-    // Setup the spi for 8 bit data, high steady state clock,
-    // second edge capture, with a 1MHz clock rate
-    spi.format(8,3);
+    // Setup the spi for 8 bit data, low steady state clock,
+    // first edge capture, with a 1MHz clock rate
+    spi.format(8,0);
     spi.frequency(1000000);
  
     while (1) {
