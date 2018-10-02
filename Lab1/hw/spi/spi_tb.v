@@ -11,12 +11,10 @@ reg  [7:0]  spi_send_buf = 8'hAA;
 
 integer i;
 
-simple_spi spi_inst(.i_clk, 
-                    .i_rst_n, 
-                    .i_spi_mosi, 
-                    .i_spi_sck, 
-                    .i_spi_cs, 
-                    .o_data
+simple_spi spi_inst(.MAX10_CLK1_50(i_clk), 
+                    .GPIO({33'b0, i_spi_mosi, i_spi_cs, i_spi_sck}), 
+                    .KEY({i_rst_n, 1'b0}), 
+                    .LEDR(o_data)
                     );
 
 initial begin

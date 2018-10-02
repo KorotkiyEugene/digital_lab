@@ -6,7 +6,7 @@ input   [1:0]   KEY;
 output  [9:0]   LEDR;
 
 wire    sys_clk     = MAX10_CLK1_50;
-wire    sys_rst_n     = KEY[1];
+wire    sys_rst_n   = KEY[1];
 
 wire    spi_sck     = GPIO[0];
 wire    spi_cs      = GPIO[1];
