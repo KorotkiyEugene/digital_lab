@@ -24,10 +24,9 @@ always @(posedge sys_clk, negedge sys_rst_n) begin
     if(~sys_rst_n) begin
         freq_step <= 0;
     end else begin
-        freq_step <= {14'd0, SW, 8'd0};   //for simplicity here we dont use double-flopping
+        freq_step <= {14'd0, SW, 8'd0};   //for simplicity here we dont use synchronization
     end
 end
-
 
 always @(posedge sys_clk, negedge sys_rst_n) begin
     if(~sys_rst_n) begin
