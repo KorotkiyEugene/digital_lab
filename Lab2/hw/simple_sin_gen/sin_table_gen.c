@@ -45,7 +45,7 @@ int main(int argc, char **argv)
                         fprintf(stderr, HINTS);
                         return -1;
                     }
-                    scale = ( (double)( (1l << N) - 0.5l) ) / 2.0;
+                    scale = ( (double)( (1l << N) - 1l) ) / 2.0;
                     break;
 
                 case '?':
@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 
     for (p = 0; p < P; p++) {
         phase = phase_const * (double)p;
-        code = scale * (sin(phase) + 1.0);
+        code = floor(scale * (sin(phase) + 1.0) + 0.5);
         //printf("code[%d] = %x;\n", p, code );
         //printf("code[%d] = %f;\n", p, sin(phase) );
         fprintf(fp, "%x\n", code);
