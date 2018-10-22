@@ -1,4 +1,4 @@
-module dec_7seg_tb (SW, HEX0);
+module dec_7seg_demo (SW, HEX0);
 
 input   [9:0]   SW;
 output  [7:0]   HEX0;  
