@@ -28,6 +28,5 @@ always @* begin
 
 end
 
-
 endmodule
 
