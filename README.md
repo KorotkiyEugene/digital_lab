@@ -6,7 +6,7 @@ Lab 2: Counter, wave generators (triangle & sine), numerically controlled oscill
 
 Lab 3: Clock dividers (counter based & one-hot ring based), NCO-based FM transmitter
 
-Lab 4: Decoder for 7-segment display, digital clock, multiplexer, SPI receiver with several regs
+Lab 4: Decoder for 7-segment display, digital clock
 
 Lab 5: Simple PWM, PCM-PWM converter for playing audio, PWM-based AM transmitter
 
