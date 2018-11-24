@@ -31,7 +31,7 @@ simple_uart_receiver uart_rec(.i_clk (sys_clk),
                                 );
                                
 always @(posedge sys_clk)
-    sample <= uart_dat;
+    sample <= uart_dat - 128;
     
 always @(posedge sys_clk)
     nco_phase_step <= nco_phase_step_carrier + nco_phase_step_deviation;
