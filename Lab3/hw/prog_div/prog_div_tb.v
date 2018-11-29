@@ -5,6 +5,7 @@ module testbench;
 parameter PERIOD = 20;
 parameter DIV_BY = 7;
 
+wire [35:0] gpio;        
 wire        o_clk;
 reg         i_clk, i_rst_n;
 reg [9:0]   i_div_by;
@@ -14,8 +15,10 @@ integer i = 0;
 prog_div prog_div_inst(.MAX10_CLK1_50(i_clk), 
                         .KEY ({i_rst_n, 1'b0}),
                         .SW (i_div_by), 
-                        .GPIO (o_clk)
+                        .GPIO (gpio)
                         );
+
+assign o_clk = gpio[0];
 
 initial begin
     i_clk = 0;

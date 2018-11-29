@@ -4,6 +4,7 @@ module testbench;
 
 parameter PERIOD = 20;
 
+wire [35:0] gpio;
 wire        o_pwm;
 reg         i_clk;
 reg         i_pwm_en;
@@ -14,8 +15,10 @@ integer i = 0;
 simple_pwm simple_pwm_inst (.MAX10_CLK1_50 (i_clk), 
                             .KEY ({1'b0, i_pwm_en}), 
                             .SW (i_pwm_dc), 
-                            .GPIO (o_pwm)
+                            .GPIO (gpio)
                            );
+
+assign o_pwm = gpio[0];
 
 initial begin
     i_clk = 0;

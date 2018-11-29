@@ -7,11 +7,14 @@ parameter DIV_BY = 7;
 
 reg         i_clk, i_rst_n;
 wire        o_clk;
+wire [35:0] gpio;
 
 const_div #(.DIV_BY(DIV_BY)) const_div_inst(.MAX10_CLK1_50(i_clk), 
                                             .KEY ({i_rst_n, 1'b0}), 
-                                            .GPIO (o_clk)
+                                            .GPIO (gpio)
                                             );
+
+assign o_clk = gpio[0];
 
 initial begin
     i_clk = 0;
