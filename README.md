@@ -10,4 +10,6 @@ Lab 4: Decoder for 7-segment display, digital clock
 
 Lab 5: Simple PWM, PCM-PWM converter for playing audio, PWM-based AM transmitter
 
+Lab 6: Encoder, priority encoder, decoder, bin-to-bcd, barrel shifter, multiplexer
+
 Info about boards (user mauals, schematic, assignments, etc): https://github.com/KorotkiyEugene/intel_fpga_boards
