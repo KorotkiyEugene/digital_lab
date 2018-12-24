@@ -5,7 +5,7 @@ module testbench;
 parameter DELAY = 20;
 parameter WIDTH = 8;
 
-reg     [WIDTH-1:0]  i_dat0, i_dat1, i_dat2, i_dat3, i_dat4;;
+reg     [WIDTH-1:0]  i_dat0, i_dat1, i_dat2, i_dat3, i_dat4;
 reg     [2:0]        i_sel;
 wire    [WIDTH-1:0]  o_dat;
 
